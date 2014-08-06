@@ -1,0 +1,34 @@
+*
+  margin: 0
+  padding: 0
+  +box-sizing(border-box)
+  list-style: none
+  font-family: Merriweather, serif
+  font-weight: 300
+  text-decoration: none
+
+  &:focus
+    outline: none
+
+html, body
+  +font-smoothing(antialiased)
+  background: white
+  color: $black
+  font-size: 10px
+
+hr
+  clear: both
+  margin: 2em 0
+  display: block
+
+a
+  color: desaturate($red, 15%)
+
+  &:hover, &:focus
+    color: saturate($red, 25%)
+
+  &:active
+    color: darken($red, 25%)
+
+.content
+  padding: 2em

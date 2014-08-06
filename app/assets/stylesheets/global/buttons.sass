@@ -1,0 +1,39 @@
+a.button, button, input[type=submit]
+  float: left
+  height: 2.3em
+  padding: 0 1em
+  +appearance(none)
+  +border-radius(3px)
+  +box-shadow(rgba(255, 255, 255, 0.35) 0 1px 0 inset)
+  background: $blue
+  border: 1px solid rgba(0, 0, 0, 0.25)
+  color: white
+  cursor: pointer
+  font-size: 1.4em
+  font-weight: 600
+  line-height: 2.3em
+
+  &:hover, &:focus
+    background: saturate($blue, 25%)
+
+  &:active
+    background: darken($blue, 25%)
+    +box-shadow(none)
+
+  &.active
+    color: white
+
+a.button, button
+  float: right
+
+  &.delete
+    background: #f0f0f0
+    color: $black
+
+    &:hover, &:focus
+      background: $red
+      color: white
+
+    &:active
+      background: darken($red, 25%)
+      +box-shadow(none)

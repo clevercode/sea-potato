@@ -1,0 +1,34 @@
+header
+  position: relative
+  padding: 2em
+  background: $black
+  color: white
+
+  h1
+    z-index: 0
+    position: relative
+    display: inline-block
+    color: white
+    cursor: pointer
+    font-size: 4em
+    font-weight: 700
+    -webkit-text-fill-color: transparent
+
+    &:hover::before
+      background-size: 100%
+
+    &::before, &::after
+      top: 0
+      left: 0
+      z-index: -1
+      position: absolute
+      content: attr(data-text)
+
+    &::before
+      background: +linear-gradient(75deg, $red, $red 39%, white 40%, white 60%, $red 61%, $red 100%)
+      background-size: 800%
+      -webkit-background-clip: text
+      -webkit-transition: background 150ms ease-in
+
+    &::after
+      -webkit-transition: all 150ms ease-in
