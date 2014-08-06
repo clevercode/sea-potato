@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def ugly_fake_route
 
-    render :text => "You look nice today."
+    render :text => "You look nice today.", :layout => 'application'
 
   end
 end
