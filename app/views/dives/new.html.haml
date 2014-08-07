@@ -1,0 +1,45 @@
+= form_for @dive do |form|
+
+  .input
+    = form.label :dive_site
+    = form.text_field :dive_site
+  .input
+    = form.label :began_at, "Date"
+    = form.date_field :began_at_date
+    = form.time_field :began_at_time
+
+  .input
+    = form.label :buddies
+    = form.text_field :buddies
+
+  .input
+    = form.label :bottom_time
+    = form.number_field :bottom_time
+
+  .input
+    = form.label :max_depth
+    = form.number_field :max_depth
+
+  .input
+    = form.label :nitrox
+    = form.number_field :nitrox
+
+  .input
+    = form.label :water_conditions
+    = form.text_area :water_conditions
+
+  .input
+    = form.label :surface_conditions
+    = form.text_area :surface_conditions
+
+  .input
+    = form.label :notes
+    = form.text_area :notes
+    -#
+
+      t.column :notes, :text, default: ""
+      t.column :dive_site_id, :integer
+  .actions
+    = form.submit "Save Dive"
+
+/ What has been dived, cannot be undived.

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730225149) do
+ActiveRecord::Schema.define(version: 20140806224236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,5 +33,21 @@ ActiveRecord::Schema.define(version: 20140730225149) do
 
   add_index "divers", ["email"], name: "index_divers_on_email", unique: true, using: :btree
   add_index "divers", ["reset_password_token"], name: "index_divers_on_reset_password_token", unique: true, using: :btree
+
+  create_table "dives", force: true do |t|
+    t.integer  "diver_id"
+    t.string   "buddies",            default: [], array: true
+    t.json     "meta",               default: {}
+    t.datetime "began_at"
+    t.integer  "bottom_time"
+    t.integer  "max_depth"
+    t.text     "notes",              default: ""
+    t.integer  "dive_site_id"
+    t.text     "water_conditions"
+    t.text     "surface_conditions"
+    t.float    "nitrox"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
