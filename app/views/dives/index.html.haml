@@ -1,5 +1,5 @@
 %ul
   - @dives.each do |dive|
-    %li dive.id
+    %li= link_to dive, dive
 
 = link_to 'Log a dive', new_dive_path
